@@ -5,8 +5,8 @@ type Stack[T any] struct {
 	length int
 }
 
-func NewStack[T any]() *Stack[T] {
-	return &Stack[T]{make([]T, 0, 16), 0}
+func New[T any](cap int) *Stack[T] {
+	return &Stack[T]{make([]T, 0, cap), 0}
 }
 
 func (s *Stack[T]) Push(key T) {
